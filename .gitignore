@@ -16,6 +16,3 @@
 
 .idea
 .DS_Store
-go.sum
-storage
-conf/test_conf.go

@@ -1,7 +1,7 @@
 package file
 
 import (
-	"github.com/jsyzchen/pan/conf"
+	"github.com/LinkinStars/pan/conf"
 	"testing"
 )
 
@@ -14,4 +14,3 @@ func TestDownload(t *testing.T) {
 		t.Logf("TestDownload Success")
 	}
 }
-

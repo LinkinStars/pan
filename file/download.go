@@ -2,31 +2,31 @@ package file
 
 import (
 	"errors"
-	"github.com/jsyzchen/pan/utils/file"
+	"github.com/LinkinStars/pan/utils/file"
 	"log"
 )
 
 type Downloader struct {
 	LocalFilePath string
-	DownloadLink string
-	FsID uint64
-	Path string
-	AccessToken string
-	TotalPart int
+	DownloadLink  string
+	FsID          uint64
+	Path          string
+	AccessToken   string
+	TotalPart     int
 }
 
-func NewDownloader(accessToken string, downloadLink string, localFilePath string, ) *Downloader {
+func NewDownloader(accessToken string, downloadLink string, localFilePath string) *Downloader {
 	return &Downloader{
-		AccessToken: accessToken,
+		AccessToken:   accessToken,
 		LocalFilePath: localFilePath,
-		DownloadLink: downloadLink,
+		DownloadLink:  downloadLink,
 	}
 }
 
 func NewDownloaderWithFsID(accessToken string, fsID uint64, localFilePath string) *Downloader {
 	return &Downloader{
-		AccessToken: accessToken,
-		FsID: fsID,
+		AccessToken:   accessToken,
+		FsID:          fsID,
 		LocalFilePath: localFilePath,
 	}
 }
@@ -46,7 +46,7 @@ func (d *Downloader) Download() error {
 		return errors.New("param error, localFilePath is empty")
 	}
 
-	if d.DownloadLink != "" {//直接下载
+	if d.DownloadLink != "" { //直接下载
 		downloadLink = d.DownloadLink
 	} else if d.FsID != 0 {
 		// 根据fsID获取下载链接
@@ -80,5 +80,3 @@ func (d *Downloader) Download() error {
 
 	return nil
 }
-
-

@@ -1,4 +1,4 @@
-module github.com/jsyzchen/pan
+module github.com/LinkinStars/pan
 
 go 1.13
 
